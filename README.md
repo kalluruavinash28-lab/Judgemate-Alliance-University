@@ -2,16 +2,22 @@
 
 JUDGEMATE lets an administrator create events, add teams and judges, set scoring categories, and assign teams. Judges sign in from their phones and see only their assigned teams. Scores and reports are shared through Firebase Authentication and Cloud Firestore.
 
+## Project structure
+
+- `frontend/` contains the React/Vite app, its Firebase client configuration, and the frontend environment files.
+- `backend/` contains Firebase Functions and Firestore security rules.
+- `firebase.json` at the repository root configures Firebase Hosting, Functions, and Firestore deployment.
+
 ## Local development
 
 1. Install Node.js 20 or newer.
-2. Copy `.env.example` to `.env` and add the Firebase web app configuration.
-3. Run `npm install` and `npm run dev`.
+2. Copy `frontend/.env.example` to `frontend/.env` and add the Firebase web app configuration.
+3. From the repository root, run `npm --prefix frontend install` and `npm --prefix frontend run dev`.
 4. Open the development URL with `/in/` at the end.
 
 ## Firebase setup
 
-The Firebase project is `judgemate-au-2026`. It uses the free Firebase Hosting and Firestore services; Cloud Functions are not part of this deployment.
+The Firebase project is `judgemate-au-2026`. The current deployment uses Firebase Hosting and Firestore. Backend Functions are organized under `backend/functions` for future use.
 
 In the Firebase Console, finish these one-time steps before deploying:
 
@@ -21,7 +27,7 @@ In the Firebase Console, finish these one-time steps before deploying:
 4. Deploy the Firestore rules and site:
 
    ```sh
-   npm run build
+   npm --prefix frontend run build
    firebase deploy --only firestore:rules,hosting
    ```
 

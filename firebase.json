@@ -1,1 +1,1 @@
-{"firestore":{"rules":"firestore.rules"},"hosting":{"public":"dist","ignore":["firebase.json","**/.*","**/node_modules/**"],"redirects":[{"source":"/","destination":"/in/","type":301}],"rewrites":[{"source":"/in/**","destination":"/in/index.html"}]}}
+{"firestore":{"rules":"backend/firestore.rules"},"functions":{"source":"backend/functions"},"hosting":{"public":"frontend/dist","ignore":["firebase.json","**/.*","**/node_modules/**"],"redirects":[{"source":"/","destination":"/in/","type":301}],"rewrites":[{"source":"/in/**","destination":"/in/index.html"}]}}

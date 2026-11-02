@@ -1,8 +1,8 @@
 node_modules/
-functions/node_modules/
-functions/lib/
-dist/
-.env
+**/node_modules/
+backend/functions/lib/
+**/dist/
+**/.env
 .firebase/
 
 dev-preview.log
